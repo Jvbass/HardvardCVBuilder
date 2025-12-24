@@ -95,7 +95,51 @@ Sigue estos pasos para correr el proyecto en tu máquina local:
 4.  Abre tu navegador en `http://localhost:5173` (o el puerto que indique tu terminal).
 
 
-       
+## Cómo Contribuir
+
+¡Las contribuciones son bienvenidas! Si deseas mejorar este proyecto o agregar funcionalidades, por favor sigue estos pasos para hacer un Pull Request (PR):
+
+1.  **Haz un Fork** del proyecto (botón "Fork" arriba a la derecha).
+    
+2.  **Crea una nueva rama** para tu funcionalidad o corrección:
+
+    ```
+    git checkout -b feature/NuevaFuncionalidad
+    
+    ```
+Usa:
+- feature (Nueva característica)
+
+- fix (Corrección de error)
+
+- chore (Mantenimiento)
+
+- docs (Documentación)
+
+- style (Formato de código)
+
+- refactor (Reestructuración)
+
+- perf (Mejora de rendimiento)
+
+- test (Pruebas)
+    
+3.  **Realiza tus cambios** y haz commit:
+    
+    ```
+    git commit -m 'Agrega nueva funcionalidad increíble'
+    
+    ```
+    
+4.  **Haz push** a la rama en tu repositorio:
+    
+    ```
+    git push origin feature/NuevaFuncionalidad
+
+    
+    ```
+    
+5.  **Abre un Pull Request** en GitHub desde tu rama hacia la rama `main` de este repositorio describiendo tus cambios.
 
 ## Licencia
 
