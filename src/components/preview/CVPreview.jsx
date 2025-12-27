@@ -3,7 +3,15 @@ import { Download } from "lucide-react";
 import { PAGE_SIZES } from "../../data/cvData";
 import CVSection from "../cv/CVSection";
 
-export default function CVPreview({ data, pageSize, onPrint }) {
+export default function CVPreview({ data, pageSize, onPrint, showDate }) {
+  const getFormattedDate = () => {
+    const date = new Date();
+    return date.toLocaleDateString("es-ES", {
+      day: "2-digit",
+      month: "2-digit",
+      year: "numeric",
+    });
+  };
   return (
     <div className="flex-1 p-8 overflow-y-auto flex flex-col items-center relative">
       {/* --- ESTILOS DE IMPRESIÓN --- */}
@@ -27,7 +35,7 @@ export default function CVPreview({ data, pageSize, onPrint }) {
         }
       `}</style>
       {/* Toolbar */}
-      <div className="fixed top-6 right-8 z-30 no-print">
+      <div className="fixed bottom-6 right-8 z-30 no-print">
         <button
           onClick={onPrint}
           className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-full shadow-lg font-bold flex items-center gap-2 transition transform hover:scale-105"
@@ -48,6 +56,11 @@ export default function CVPreview({ data, pageSize, onPrint }) {
           lineHeight: "1.3",
         }}
       >
+        {showDate && (
+          <div className="absolute top-6 right-8 text-[9pt] italic text-gray-500">
+            Última versión - {getFormattedDate()}
+          </div>
+        )}
         {/* Header */}
         <header className="text-center mb-6">
           <h1 className="text-2xl font-serif font-bold tracking-wide uppercase mb-2">

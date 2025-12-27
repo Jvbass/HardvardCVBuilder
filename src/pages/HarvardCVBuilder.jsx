@@ -11,6 +11,7 @@ export default function HarvardCVBuilder() {
   const [data, setData] = useState(initialData);
   const [activeSection, setActiveSection] = useState("personal");
   const [pageSize, setPageSize] = useState("A4");
+  const [showDate, setShowDate] = useState(false);
 
   // Handlers
   const handlePersonalChange = (e) => {
@@ -27,7 +28,7 @@ export default function HarvardCVBuilder() {
   };
 
   // List Handlers
-  const updateListItem = (section, id, field, value) => {
+  const updateListItem = (section, id, field) => {
     setData((prev) => ({
       ...prev,
       [section]: prev[section].map((item) =>
@@ -128,7 +129,12 @@ export default function HarvardCVBuilder() {
 
         <div className="p-6 space-y-6 flex-1">
           {/* Section: Page Settings */}
-          <PageSettings pageSize={pageSize} setPageSize={setPageSize} />
+          <PageSettings
+            pageSize={pageSize}
+            setPageSize={setPageSize}
+            showDate={showDate}
+            setShowDate={setShowDate}
+          />
 
           {/* Section: Personal Info */}
           <PersonalEditor
@@ -188,7 +194,12 @@ export default function HarvardCVBuilder() {
       </div>
 
       {/* ---------------------------------------- PREVIEW CV AREA ---------------------------------------- */}
-      <CVPreview data={data} pageSize={pageSize} onPrint={handlePrint} />
+      <CVPreview
+        data={data}
+        pageSize={pageSize}
+        onPrint={handlePrint}
+        showDate={showDate}
+      />
     </div>
   );
 }
