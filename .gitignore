@@ -57,6 +57,13 @@ yarn-error.log*
 pnpm-debug.log*
 .npm/
 
+# IDEs and editors
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
 # GitHub Copilot
 .copilot-chat-history
 github-copilot.log
