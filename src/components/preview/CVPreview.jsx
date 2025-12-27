@@ -47,7 +47,7 @@ export default function CVPreview({ data, pageSize, onPrint, showDate }) {
       {/* The CV Document - Harvard Format */}
       <div
         id="cv-document"
-        className="print-area bg-white shadow-2xl mx-auto harvard-font text-black transition-all duration-300 ease-in-out"
+        className="relative print-area bg-white shadow-2xl mx-auto harvard-font text-black transition-all duration-300 ease-in-out"
         style={{
           width: PAGE_SIZES[pageSize].width,
           minHeight: PAGE_SIZES[pageSize].height,
