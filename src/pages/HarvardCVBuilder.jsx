@@ -6,6 +6,7 @@ import ExperienceEditor from "../components/editor/ExperienceEditor";
 import SkillsEditor from "../components/editor/SkillsEditor";
 import PageSettings from "../components/editor/PageSettings";
 import CVPreview from "../components/preview/CVPreview";
+import { Github } from "lucide-react";
 
 export default function HarvardCVBuilder() {
   const [data, setData] = useState(initialData);
@@ -116,15 +117,14 @@ export default function HarvardCVBuilder() {
   return (
     <div className="min-h-screen bg-gray-100 font-sans flex flex-col md:flex-row">
       {/* ---------------------------------------- SIDEBAR EDITOR (Left) ---------------------------------------- */}
-      <div className="w-full md:w-2/5 lg:w-1/3 bg-white border-r border-gray-200 h-screen overflow-y-auto no-print shadow-lg z-10 flex flex-col">
-        <div className="p-6 sticky top-0 bg-white z-20 border-b border-gray-100">
-          <h1 className="text-2xl font-bold text-gray-800 flex items-center gap-2">
-            <span className="bg-red-800 text-white p-1 rounded">H</span> Harvard
-            CV Builder
-          </h1>
-          <p className="text-sm text-gray-500 mt-1">
-            Edita los campos para actualizar tu CV.
-          </p>
+      <div className="w-full md:w-2/5 lg:w-1/3 bg-white border-r border-gray-200 h-screen overflow-y-auto no-print shadow-lg z-10 flex flex-col sticky top-0">
+        <div className="p-6 sticky top-0 bg-white z-20 border-b border-gray-100 ">
+          <div className="flex items-center gap-2 pb-2">
+            <img src="/logo.png" alt="logo cv builder" className="w-12 h-12" />
+            <h1 className="text-2xl font-bold text-gray-800 flex items-center ">
+              Harvard CV Builder
+            </h1>
+          </div>
         </div>
 
         <div className="p-6 space-y-6 flex-1">
@@ -190,6 +190,20 @@ export default function HarvardCVBuilder() {
         </div>
         <div className="p-4 border-t border-gray-100 text-center text-xs text-gray-400 bg-gray-50">
           Formato actual: {pageSize}
+        </div>
+        <div className="p-4 border-t border-gray-100 text-center text-xs text-gray-400 bg-gray-50">
+          Creado con ❤️ · Proyecto de codigo abierto para la comunidad
+          Incubadora.dev
+        </div>
+        <div className="p-4 border-t border-gray-100 text-center text-xs text-gray-600 bg-gray-50">
+          <a
+            href="https://github.com/Jvbass/HardvardCVBuilder"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-gray-600 flex items-center justify-center"
+          >
+            <Github className="inline-block mr-2" />
+          </a>
         </div>
       </div>
 
